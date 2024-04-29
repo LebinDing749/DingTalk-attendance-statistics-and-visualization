@@ -48,7 +48,7 @@
 
 ```
  pip install pandas
- pin install matplotlib
+ pip install matplotlib
 ```
 
 ##### step4
