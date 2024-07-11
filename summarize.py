@@ -7,12 +7,6 @@
 # 4. 统计工作日，每个人，f.每个打卡节点（例如上午上班，上午下班，下午上班等，一天6个打卡节点）的平均打卡时间
 # 以上结果可视化
 
-##############################################
-##############################################
-# # # 在此之前， 请在 excel 中将以文本显示的数字 改为 数字
-# # # 使用到的文本数字， 包括 月度汇总-出勤天数 工作时长， 包括 每日统计-工作时长
-################################################
-##############################################
 # # # matplotlib 画图, 注意 linux 下可能不包含对于字体，需要手动装
 # # # 字体问题在win环境下实测可行
 ###############################################
@@ -38,8 +32,8 @@ def read_total_worktime(file_path):
     column = df.shape[1]
     for i in range(3, row):  # 行3开始，每行一人
         name = df.iloc[i][0]
-        attendance_days = df.iloc[i][6]
-        total_worktime = df.iloc[i][8]
+        attendance_days = pd.to_numeric(df.iloc[i][6], errors='coerce')
+        total_worktime = pd.to_numeric(df.iloc[i][8], errors='coerce')
         # print(name)
 
         if name in data_dict:
@@ -71,7 +65,7 @@ def read_workday_worktime(file_path):
         name = df.iloc[i][0]
         shift = df.iloc[i][8]
         morning_checktime = df.iloc[i][9]
-        daily_worktime = df.iloc[i][24]
+        daily_worktime = pd.to_numeric(df.iloc[i][24], errors='coerce')
         # print(name)
         # print(shift)
         # print(morning_checktime)
