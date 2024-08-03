@@ -72,7 +72,7 @@ python summarize.py
 ### 注意事项
 
 ```
-# # # matplotlib 画图, 注意 linux 下可能不包含对于字体，需要手动装
+# # # matplotlib 画图, 注意 linux 下可能不包含某些字体，需要手动装
 # # # 字体问题在win环境下实测可行
 ```
 
